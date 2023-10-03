@@ -1,0 +1,367 @@
+Microsoft Windows [Version 10.0.19041.388]
+(c) Корпорация Майкрософт (Microsoft Corporation), 2020. Все права защищены.
+
+C:\Users\st>d:
+
+D:\>cd repo
+
+D:\repo>dir
+ Том в устройстве D имеет метку Новый том
+ Серийный номер тома: B774-4777
+
+ Содержимое папки D:\repo
+
+21.09.2023  21:05    <DIR>          .
+21.09.2023  21:05    <DIR>          ..
+26.09.2023  18:56    <DIR>          superset
+               0 файлов              0 байт
+               3 папок  217 895 444 480 байт свободно
+
+D:\repo>git --version
+git version 2.28.0.windows.1
+
+D:\repo>md project
+
+D:\repo>cd project
+
+D:\repo\project>git init
+Initialized empty Git repository in D:/repo/project/.git/
+
+D:\repo\project>git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+D:\repo\project>notepad README.md
+
+D:\repo\project>git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        README.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+D:\repo\project>git add README.md
+
+D:\repo\project>git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   README.md
+
+
+D:\repo\project>notepad outsider.txt
+
+D:\repo\project>type outsider.txt
+╨╝╨╡╨╜╤П ╨╜╨╡ add ╨▓ staging
+D:\repo\project>git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   README.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        outsider.txt
+
+
+D:\repo\project>git commit -m "start"
+[master (root-commit) 0fa444b] start
+ 1 file changed, 2 insertions(+)
+ create mode 100644 README.md
+
+D:\repo\project>git log
+commit 0fa444b624e7997ed357c7ec5e9952b2d8fef6ac (HEAD -> master)
+Author: teacher PH2021 <postnikov_s@teacher.itstep.by>
+Date:   Tue Oct 3 19:58:47 2023 +0300
+
+    start
+
+D:\repo\project>git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        outsider.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+D:\repo\project>git branch draft
+
+D:\repo\project>git branch
+  draft
+* master
+
+D:\repo\project>git checkout draft
+Switched to branch 'draft'
+
+D:\repo\project>git branch
+* draft
+  master
+
+D:\repo\project>dir
+ Том в устройстве D имеет метку Новый том
+ Серийный номер тома: B774-4777
+
+ Содержимое папки D:\repo\project
+
+03.10.2023  19:54    <DIR>          .
+03.10.2023  19:54    <DIR>          ..
+03.10.2023  19:55                28 outsider.txt
+03.10.2023  19:34                57 README.md
+               2 файлов             85 байт
+               2 папок  217 895 399 424 байт свободно
+
+D:\repo\project>notepad README.md
+
+D:\repo\project>git status
+On branch draft
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        outsider.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+D:\repo\project>git commit -a -m "added text"
+[draft 4943685] added text
+ 1 file changed, 2 insertions(+)
+
+D:\repo\project>git status
+On branch draft
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        outsider.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+D:\repo\project>git branch
+* draft
+  master
+
+D:\repo\project>git checkout master
+Switched to branch 'master'
+
+D:\repo\project>git branch
+  draft
+* master
+
+D:\repo\project>git checkout draft
+Switched to branch 'draft'
+
+D:\repo\project>git status
+On branch draft
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        outsider.txt
+        plane_accidents.csv
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+D:\repo\project>git add plane_accidents.csv
+
+D:\repo\project>git status
+On branch draft
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   plane_accidents.csv
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        outsider.txt
+
+
+D:\repo\project>git commit -m "added data file"
+[draft 6bfc506] added data file
+ 1 file changed, 57 insertions(+)
+ create mode 100644 plane_accidents.csv
+
+D:\repo\project>git status
+On branch draft
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        outsider.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+D:\repo\project>md data
+
+D:\repo\project>git status
+On branch draft
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        outsider.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+D:\repo\project>git status
+On branch draft
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    plane_accidents.csv
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        data/
+        outsider.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+D:\repo\project>git add data/
+
+D:\repo\project>git status
+On branch draft
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   data/plane_accidents.csv
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    plane_accidents.csv
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        outsider.txt
+
+
+D:\repo\project>git brach master
+git: 'brach' is not a git command. See 'git --help'.
+
+The most similar command is
+        branch
+
+D:\repo\project>git branch master
+fatal: A branch named 'master' already exists.
+
+D:\repo\project>git checkout master
+Switched to branch 'master'
+A       data/plane_accidents.csv
+
+D:\repo\project>git checkout draft
+Switched to branch 'draft'
+A       data/plane_accidents.csv
+
+D:\repo\project>git status
+On branch draft
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   data/plane_accidents.csv
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        normal_pdf.jpg
+        outsider.txt
+
+
+D:\repo\project>git add normal_pdf.jpg
+
+D:\repo\project>git branch
+* draft
+  master
+
+D:\repo\project>git status
+On branch draft
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   data/plane_accidents.csv
+        new file:   normal_pdf.jpg
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        outsider.txt
+
+
+D:\repo\project>git checkout master
+Switched to branch 'master'
+A       data/plane_accidents.csv
+A       normal_pdf.jpg
+
+D:\repo\project>git checkout draft
+Switched to branch 'draft'
+A       data/plane_accidents.csv
+A       normal_pdf.jpg
+
+D:\repo\project>git commit -m "moved data and added picture"
+[draft 1710e8d] moved data and added picture
+ 2 files changed, 57 insertions(+)
+ create mode 100644 data/plane_accidents.csv
+ create mode 100644 normal_pdf.jpg
+
+D:\repo\project>git rm plane_accidents.csv
+rm 'plane_accidents.csv'
+
+D:\repo\project>git status
+On branch draft
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    plane_accidents.csv
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        outsider.txt
+
+
+D:\repo\project>git commit -m "deleted data copy"
+[draft 6948c0b] deleted data copy
+ 1 file changed, 57 deletions(-)
+ delete mode 100644 plane_accidents.csv
+
+D:\repo\project>git log
+commit 6948c0b1a1093059c628ca531fb986fc50d83d75 (HEAD -> draft)
+Author: teacher PH2021 <postnikov_s@teacher.itstep.by>
+Date:   Tue Oct 3 20:27:01 2023 +0300
+
+    deleted data copy
+
+commit 1710e8d63434a135e6e324fd96237afeec04f879
+Author: teacher PH2021 <postnikov_s@teacher.itstep.by>
+Date:   Tue Oct 3 20:25:17 2023 +0300
+
+    moved data and added picture
+
+commit 6bfc5067470997df0623d07372a1bdf064bbd053
+Author: teacher PH2021 <postnikov_s@teacher.itstep.by>
+Date:   Tue Oct 3 20:16:12 2023 +0300
+
+    added data file
+
+commit 49436855726d386dde18ebadfdfb6ae4682cf894
+Author: teacher PH2021 <postnikov_s@teacher.itstep.by>
+Date:   Tue Oct 3 20:08:47 2023 +0300
+
+    added text
+
+commit 0fa444b624e7997ed357c7ec5e9952b2d8fef6ac (master)
+Author: teacher PH2021 <postnikov_s@teacher.itstep.by>
+Date:   Tue Oct 3 19:58:47 2023 +0300
+
+    start
+
+D:\repo\project>git checkout master
+Switched to branch 'master'
+
+D:\repo\project>git log
+commit 0fa444b624e7997ed357c7ec5e9952b2d8fef6ac (HEAD -> master)
+Author: teacher PH2021 <postnikov_s@teacher.itstep.by>
+Date:   Tue Oct 3 19:58:47 2023 +0300
+
+    start
+
+D:\repo\project>
